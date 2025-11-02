@@ -1,68 +1,98 @@
+/* src/index.css */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  /* Dark Sweet Shop Color Palette - Pink/Red Theme */
+  --color-primary: #ff1744;
+  --color-primary-light: #ff5252;
+  --color-primary-dark: #c51162;
+  --color-secondary: #ff4081;
+  --color-accent: #f50057;
+  --color-success: #ff6b9d;
+  --color-danger: #d50000;
+  
+  /* Dark Background Colors */
+  --color-bg: #0a0a0a;
+  --color-bg-card: #1a1a1a;
+  --color-bg-light: #252525;
+  --color-bg-overlay: rgba(26, 26, 26, 0.95);
+  
+  /* Text Colors */
+  --color-text: #f0f0f0;
+  --color-text-muted: #888888;
+  --color-text-light: #b0b0b0;
+  
+  /* Effects */
+  --shadow: 0 4px 20px rgba(255, 23, 68, 0.25);
+  --shadow-hover: 0 8px 30px rgba(255, 23, 68, 0.4);
+  --shadow-card: 0 2px 15px rgba(0, 0, 0, 0.5);
+  --radius: 16px;
+  --radius-small: 8px;
+  
+  /* Gradient Backgrounds */
+  --gradient-primary: linear-gradient(135deg, #ff1744 0%, #ff5252 100%);
+  --gradient-secondary: linear-gradient(135deg, #f50057 0%, #ff4081 100%);
+  --gradient-accent: linear-gradient(135deg, #c51162 0%, #ff1744 100%);
+  --gradient-candy: linear-gradient(135deg, #ff1744 0%, #f50057 50%, #c51162 100%);
+  --gradient-bg: linear-gradient(180deg, #0a0a0a 0%, #1a0a0f 100%);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--gradient-bg);
+  background-attachment: fixed;
+  color: var(--color-text);
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 23, 68, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(245, 0, 87, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-top: 0;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(255, 23, 68, 0.3));
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+a:hover {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  transform: translateY(-1px);
+  text-shadow: 0 0 10px rgba(255, 23, 68, 0.5);
 }
