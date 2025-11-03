@@ -165,7 +165,7 @@ Time:        ...s
 ```
 ---
 
-## 🤖 My AI Usage (Mandatory)
+## 🤖 My AI Usage
 
 This project explicitly encouraged the use of AI tools to be transparently documented. This section details how I used AI (Gemini) throughout the development process.
 
